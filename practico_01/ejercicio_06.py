@@ -7,7 +7,15 @@ def numeros_al_final_basico(lista: List[Union[float, str]]) -> List[Union[float,
     """Toma una lista de enteros y strings y devuelve una lista con todos los
     elementos numéricos al final.
     """
-    pass # Completar
+    l_letters = []
+    l_numbers = []
+    for c in lista:
+        if type(c) == str: 
+            l_letters.append(c)
+        else:
+            l_numbers.append(c)
+    l_letters.extend(l_numbers)
+    return l_letters
 
 
 # NO MODIFICAR - INICIO
@@ -20,7 +28,10 @@ assert numeros_al_final_basico([3, "a", 1, "b", 10, "j"]) == ["a", "b", "j", 3, 
 
 def numeros_al_final_comprension(lista: List[Union[float, str]]) -> List[Union[float, str]]:
     """Re-escribir utilizando comprensión de listas."""
-    pass # Completar
+    l_letters = [c for c in lista if type(c) == str]
+    l_numbers = [ c for c in lista if type(c) == int ]
+    l_letters.extend(l_numbers)
+    return l_letters
 
 
 # NO MODIFICAR - INICIO
@@ -35,7 +46,9 @@ def numeros_al_final_sorted(lista: List[Union[float, str]]) -> List[Union[float,
     """Re-escribir utilizando la función sorted con una custom key.
     Referencia: https://docs.python.org/3/library/functions.html#sorted
     """
-    pass # Completar
+    #https://stackoverflow.com/questions/49829732/sorting-a-mixed-list-of-ints-and-strings
+    #https://stackoverflow.com/questions/6422700/how-to-get-indices-of-a-sorted-array-in-python
+    return sorted(lista,key=lambda v:(isinstance(v, int)))
 
 
 # NO MODIFICAR - INICIO
@@ -50,7 +63,11 @@ def numeros_al_final_filter(lista: List[Union[float, str]]) -> List[Union[float,
     """CHALLENGE OPCIONAL - Re-escribir utilizando la función filter.
     Referencia: https://docs.python.org/3/library/functions.html#filter
     """
-    pass # Completar
+    l_letters = l_numbers = []
+    l_letters = list(filter(lambda c: type(c) == str,lista))
+    l_numbers = list(filter(lambda c: type(c) == int,lista))
+    l_letters.extend(l_numbers)
+    return l_letters
 
 
 # NO MODIFICAR - INICIO
