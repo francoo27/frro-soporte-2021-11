@@ -48,7 +48,7 @@ def numeros_al_final_sorted(lista: List[Union[float, str]]) -> List[Union[float,
     """
     #https://stackoverflow.com/questions/49829732/sorting-a-mixed-list-of-ints-and-strings
     #https://stackoverflow.com/questions/6422700/how-to-get-indices-of-a-sorted-array-in-python
-    return sorted(lista,key=lambda v:(isinstance(v, int)))
+    return sorted(lista,key=lambda v:(not isinstance(v, str)))
 
 
 # NO MODIFICAR - INICIO
@@ -63,10 +63,8 @@ def numeros_al_final_filter(lista: List[Union[float, str]]) -> List[Union[float,
     """CHALLENGE OPCIONAL - Re-escribir utilizando la función filter.
     Referencia: https://docs.python.org/3/library/functions.html#filter
     """
-    l_letters = l_numbers = []
     l_letters = list(filter(lambda c: type(c) == str,lista))
-    l_numbers = list(filter(lambda c: type(c) == int,lista))
-    l_letters.extend(l_numbers)
+    l_letters.extend(list(filter(lambda c: c not in l_letters ,lista)))
     return l_letters
 
 
