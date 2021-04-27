@@ -66,7 +66,7 @@ def generar_pares_generator(initial: int = 0) -> Iterator[int]:
         while True:
             yield nro
             nro += 2
-    return generador_pares()          
+    return generador_pares() 
 
 
 # NO MODIFICAR - INICIO
@@ -89,9 +89,9 @@ def generar_pares_generator_send(initial: int = 0) -> Iterator[int]:
         while True:
             val = (yield nro)
             if val is not None:
-               nro = val
+                nro = val
             else:
-               nro += 2
+                nro += 2
     return generador_pares(initial)
 
 

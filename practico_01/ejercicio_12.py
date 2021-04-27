@@ -49,9 +49,9 @@ def combinar_enumerate(nombres: List[str], precios: List[float], ids: List[int])
     """
     pass  # Completar
     union = [(p1, p2, p3) for in1, p1 in enumerate(nombres)
-            for in2, p2 in enumerate(precios)
-            for in3, p3 in enumerate(ids)
-            if in3 == in2 and in2 == in1]
+             for in2, p2 in enumerate(precios)
+             for in3, p3 in enumerate(ids)
+             if in3 == in2 and in2 == in1]
     return tuple(union)
 
 
