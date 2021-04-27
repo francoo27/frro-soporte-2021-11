@@ -6,7 +6,7 @@ def sumatoria_basico(n: int) -> int:
 
     Restricción: Utilizar un bucle for.
     """
-    suma = 0 
+    suma = 0
     for x in range(n + 1):
         suma = suma + x
     return suma

@@ -15,6 +15,7 @@ def multiplicar_basico(numeros: Iterable[float]) -> float:
         lv = n
     return lv
 
+
 # NO MODIFICAR - INICIO
 assert multiplicar_basico([1, 2, 3, 4]) == 24
 assert multiplicar_basico([2, 5]) == 10

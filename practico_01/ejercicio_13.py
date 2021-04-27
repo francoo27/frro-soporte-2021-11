@@ -30,14 +30,14 @@ def generar_pares_clousure(initial: int = 0) -> Callable[[], int]:
         nonlocal cont
         if nro % 2 == 0 and cont != 0:
             nro = nro + 2
-        elif nro == 0: 
+        elif nro == 0:
             nro = 0
         cont += 1
         return nro
 
     return generador_pares
 
- 
+
 # NO MODIFICAR - INICIO
 generador_pares = generar_pares_clousure(0)
 assert generador_pares() == 0
@@ -65,7 +65,7 @@ def generar_pares_generator(initial: int = 0) -> Iterator[int]:
         nro = initial
         while True:
             yield nro
-            nro += 2  
+            nro += 2
     return generador_pares()          
 
 
@@ -91,7 +91,7 @@ def generar_pares_generator_send(initial: int = 0) -> Iterator[int]:
             if val is not None:
                nro = val
             else:
-               nro += 2    
+               nro += 2
     return generador_pares(initial)
 
 
@@ -119,9 +119,9 @@ def generar_pares_delegados(initial: int = 0) -> Iterator[int]:
         nro = initial
         while True:
             yield nro
-            nro += 2  
+            nro += 2
     yield from generador_pares()
-    
+
 
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":

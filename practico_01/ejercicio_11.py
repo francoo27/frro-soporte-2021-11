@@ -13,7 +13,7 @@ def suma_cubo_pares_for(numeros: Iterable[int]) -> int:
     elevados = []
     result = 0
     for x in numeros:
-       elevados.append(x ** 3)
+        elevados.append(x ** 3)
     for x in elevados:
         if x % 2 == 0:
             result = result + x
