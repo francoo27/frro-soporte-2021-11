@@ -23,18 +23,20 @@ def generar_pares_clousure(initial: int = 0) -> Callable[[], int]:
     """
     pass # Completar
     nro = initial
-    cont=0
+    cont = 0
+
     def generador_pares():
         nonlocal nro
         nonlocal cont
-        if nro%2==0 and cont!=0:
-            nro=nro+2
-        elif nro==0: nro=0 
-        cont+=1
+        if nro%2 == 0 and cont != 0:
+            nro = nro+2
+        elif nro == 0: nro = 0 
+        cont += 1
         return nro
 
     return generador_pares 
 
+    
 # NO MODIFICAR - INICIO
 generador_pares = generar_pares_clousure(0)
 assert generador_pares() == 0
@@ -57,13 +59,13 @@ def generar_pares_generator(initial: int = 0) -> Iterator[int]:
     Referencia: https://docs.python.org/3/howto/functional.html?highlight=generator#generators
     """
     pass # Completar
+
     def generador_pares():
         nro= initial
         while True:
             yield nro
-            nro+=2   
-    return generador_pares()
-           
+            nro += 2   
+    return generador_pares()           
 
 
 # NO MODIFICAR - INICIO
@@ -80,15 +82,17 @@ assert next(generador_pares) == 4
 def generar_pares_generator_send(initial: int = 0) -> Iterator[int]:
     """CHALLENGE OPCIONAL: Re-Escribir utilizando send para saltear numeros"""
     pass # Completar
+
     def generador_pares(val:int):
-        nro= initial
+        nro = initial
         while True:
              val = (yield nro)
              if val is not None:
                 nro = val
              else :
-                nro +=2       
+                nro += 2       
     return generador_pares(initial)
+
 
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":
@@ -109,13 +113,13 @@ if __name__ == "__main__":
 def generar_pares_delegados(initial: int = 0) -> Iterator[int]:
     """CHALLENGE OPCIONAL: Re-Escribir utilizando Generadores delegados (yield from)"""
     pass # Completar
+
     def generador_pares():
-        nro= initial
+        nro = initial
         while True:
             yield nro
-            nro+=2   
-    yield from generador_pares()
-             
+            nro += 2   
+    yield from generador_pares()             
 
 
 # NO MODIFICAR - INICIO
