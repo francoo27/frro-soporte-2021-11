@@ -29,7 +29,7 @@ assert numeros_al_final_basico([3, "a", 1, "b", 10, "j"]) == ["a", "b", "j", 3, 
 def numeros_al_final_comprension(lista: List[Union[float, str]]) -> List[Union[float, str]]:
     """Re-escribir utilizando comprensión de listas."""
     l_letters = [c for c in lista if type(c) == str]
-    l_numbers = [ c for c in lista if type(c) == int ]
+    l_numbers = [c for c in lista if type(c) == int]
     l_letters.extend(l_numbers)
     return l_letters
 
@@ -46,9 +46,7 @@ def numeros_al_final_sorted(lista: List[Union[float, str]]) -> List[Union[float,
     """Re-escribir utilizando la función sorted con una custom key.
     Referencia: https://docs.python.org/3/library/functions.html#sorted
     """
-    #https://stackoverflow.com/questions/49829732/sorting-a-mixed-list-of-ints-and-strings
-    #https://stackoverflow.com/questions/6422700/how-to-get-indices-of-a-sorted-array-in-python
-    return sorted(lista,key=lambda v:(not isinstance(v, str)))
+    return sorted(lista, key=lambda v:(not isinstance(v, str)))
 
 
 # NO MODIFICAR - INICIO
@@ -63,8 +61,8 @@ def numeros_al_final_filter(lista: List[Union[float, str]]) -> List[Union[float,
     """CHALLENGE OPCIONAL - Re-escribir utilizando la función filter.
     Referencia: https://docs.python.org/3/library/functions.html#filter
     """
-    l_letters = list(filter(lambda c: type(c) == str,lista))
-    l_letters.extend(list(filter(lambda c: c not in l_letters ,lista)))
+    l_letters = list(filter(lambda c: type(c) == str, lista))
+    l_letters.extend(list(filter(lambda c: c not in l_letters, lista)))
     return l_letters
 
 
@@ -79,7 +77,7 @@ if __name__ == "__main__":
 
 def numeros_al_final_recursivo(lista: List[Union[float, str]]) -> List[Union[float, str]]:
     """CHALLENGE OPCIONAL - Re-escribir de forma recursiva."""
-    pass # Completar
+    pass  # Completar
 
 
 # NO MODIFICAR - INICIO

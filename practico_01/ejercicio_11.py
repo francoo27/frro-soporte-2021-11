@@ -21,7 +21,7 @@ def suma_cubo_pares_for(numeros: Iterable[int]) -> int:
 
 
 # NO MODIFICAR - INICIO
-#assert suma_cubo_pares_for([1, 2, 3, 4, 5, 6]) == 288
+assert suma_cubo_pares_for([1, 2, 3, 4, 5, 6]) == 288
 # NO MODIFICAR - FIN
 
 
@@ -88,7 +88,7 @@ suma_numeros_al_cubo_pares = (lambda numeros: sum(numeros_al_cubo_pares))(numero
 # Escribir una función Lambda que permita ordenar los elementos de la numeros
 # en base a si son pares o impares
 
-numeros_ordenada =  (lambda numeros:sorted(numeros, key=lambda x: x % 2 == 0))(numeros)
+numeros_ordenada = (lambda numeros: sorted(numeros, key=lambda x: x % 2 == 0))(numeros)
 
 # NO MODIFICAR - INICIO
 assert numeros_al_cubo == [1, 8, 27, 64, 125, 216]
