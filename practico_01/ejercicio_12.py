@@ -75,7 +75,7 @@ def combinar_zip(nombres: List[str], precios: List[float], ids: List[int]) -> Tu
     Referencia: https://docs.python.org/3/library/functions.html#zip
     """
     pass # Completar
-    union = tuple(zip(nombres, precios,ids)) 
+    union = tuple(zip(nombres, precios, ids)) 
     return union
 
 

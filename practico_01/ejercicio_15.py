@@ -56,7 +56,10 @@ def medir_tiempo(func: Callable[[], int]) -> Tuple[int, float]:
     recomienda usar partial.
     """
     pass # Completar
-
+    start = perf_counter()
+    result = func()
+    elapsed = perf_counter() - start
+    return (result, elapsed)
 
 # NO MODIFICAR - INICIO
 result, elapsed = medir_tiempo(partial(calcular_posibilidades, lista, limite))
@@ -74,7 +77,14 @@ def medir_tiempo(func: Callable[[Sequence[int], int], int]) -> Callable[[Sequenc
     tome una cantidad arbitraria de parámetros.
     """
     pass # Completar
+    start = perf_counter()
 
+    def calcular_posibilidades_closure(*Args, **Kargs) -> Tuple[int, float]:
+        resultado=func(*Args)
+        tiempo = perf_counter() - start
+        return (resultado, tiempo)
+
+    return calcular_posibilidades_closure
 
 # NO MODIFICAR - INICIO
 calcular_posibilidades_nueva = medir_tiempo(calcular_posibilidades)
@@ -128,7 +138,12 @@ def memoized(func):
     de ejecución
     """
     pass # Completar
-
+    memo = {}
+    def helper(*args, **kargs):
+        if (tuple(lista),limite) not in memo:            
+            memo [tuple(lista),limite] = func(lista,limite)
+        return memo [tuple(lista),limite]
+    return helper
 
 @medir_tiempo
 @memoized
@@ -164,8 +179,8 @@ assert result == 28671512
 tienen ventajas adicionales  ya que al utilizar el patrón memoized, las
 funciones recursivas permiten ejecuciones más rápidas para las llamadas
 sucesivas.
-"""
 
+"""
 
 @medir_tiempo
 @memoized

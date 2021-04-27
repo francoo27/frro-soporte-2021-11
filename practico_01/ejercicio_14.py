@@ -18,7 +18,7 @@ def apply(lista: Iterable[int], func: Callable[[int], bool]) -> Iterable[bool]:
     pass # Completar
     resultado=[]
     for x in lista:
-        resultado.append(nueva_funcion(x))
+        resultado.append(func(x))
     return resultado
 
 
