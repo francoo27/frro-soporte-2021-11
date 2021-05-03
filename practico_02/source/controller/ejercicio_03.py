@@ -12,6 +12,12 @@ $PATH$/practico_02> python -m source.controller.ejercicio_03
 """
 
 # Completar
+import main as main
+from source import util as util
+from source.data import database as database
+from source.controller import controller as controller
+from config import test_config as test_config
+from config.ci_cd import deploy_travis as deploy_travis
 
 # NO MODIFICAR - INICIO
 assert main.name == "main"
