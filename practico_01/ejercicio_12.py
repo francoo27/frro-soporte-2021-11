@@ -7,7 +7,7 @@ los objetos de la capa de negocio.
 """
 
 
-from typing import Any, List, Tuple, Union
+from typing import Any, List, Tuple
 
 nombre_articulos = ["ventana", "lámpara", "shampoo"]
 precio_articulos = [100.48, 16.42, 5.20]
@@ -19,7 +19,6 @@ def combinar_basico(nombres: List[str], precios: List[float]) -> Tuple[Any]:
 
     Restricción: Resolver utilizando un bucle for.
     """
-    pass  # Completar
     lista_unida = []
     for i in range(0, len(precios)):
         lista_unida.append((nombres[i], precios[i]))
@@ -47,11 +46,9 @@ def combinar_enumerate(nombres: List[str], precios: List[float], ids: List[int])
     """Re-Escribir utilizando enumerate y agregando un nuevo componente.
     Referencia: https://docs.python.org/3/library/functions.html#enumerate
     """
-    pass  # Completar
-    union = [(p1, p2, p3) for in1, p1 in enumerate(nombres)
-             for in2, p2 in enumerate(precios)
-             for in3, p3 in enumerate(ids)
-             if in3 == in2 and in2 == in1]
+    union = []
+    for count, values in enumerate(nombres):
+        union.append((nombres[count], precios[count], ids[count]))  
     return tuple(union)
 
 
@@ -76,7 +73,6 @@ def combinar_zip(nombres: List[str], precios: List[float], ids: List[int]) -> Tu
     """Re-Escribir utilizando zip.
     Referencia: https://docs.python.org/3/library/functions.html#zip
     """
-    pass  # Completar
     union = tuple(zip(nombres, precios, ids))
     return union
 
@@ -104,7 +100,6 @@ def combinar_zip_args(*args) -> Tuple[Any]:
     """Re-Escribir utilizando zip y una cantidad arbitraria de componentes.
     Referencia: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
     """
-    pass  # Completar
     union = tuple(zip(*args))
     return union
 
