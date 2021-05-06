@@ -28,7 +28,7 @@ def maximo_cuadruple(a: float, b: float, c: float, d: float) -> float:
     """Re-escribir para que tome 4 parámetros, utilizar la función max.
 
     Referencia: https://docs.python.org/3/library/functions.html#max"""
-    return max([a, b, c, d])
+    return max(a, b, c, d)
 
 
 # NO MODIFICAR - INICIO
