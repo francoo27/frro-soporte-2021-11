@@ -65,7 +65,6 @@ def generar_pares_generator(initial: int = 0) -> Iterator[int]:
         nro += 2
 
 
-
 # NO MODIFICAR - INICIO
 generador_pares = generar_pares_generator()
 assert next(generador_pares) == 0
@@ -87,7 +86,6 @@ def generar_pares_generator_send(initial: int = 0) -> Iterator[int]:
             nro = val
         else:
             nro += 2
-    
 
 
 # NO MODIFICAR - INICIO

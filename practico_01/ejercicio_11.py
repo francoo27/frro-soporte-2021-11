@@ -78,7 +78,6 @@ numeros_al_cubo = list(map(lambda x: x**3, numeros))
 numeros_al_cubo_pares = list(filter(lambda x: not x % 2, numeros_al_cubo))
 
 
-
 # Escribir una función Lambda que sume todos los elementos
 
 from functools import reduce

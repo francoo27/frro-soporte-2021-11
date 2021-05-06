@@ -28,8 +28,9 @@ def tiene_pares_for_else(numeros: Iterable[int]) -> bool:
     """
     for numero in numeros:
         if numero % 2 == 0:
-           break
-    else : return False
+            break
+    else: 
+        return False
     return True
 
 
