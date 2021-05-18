@@ -76,12 +76,13 @@ def medir_tiempo(func: Callable[[Sequence[int], int], int]) -> Callable[[Sequenc
     partial. En este caso se debe devolver una función que devuelva la tupla y
     tome una cantidad arbitraria de parámetros.
     """
-    start = perf_counter()
-
-    def calcular_posibilidades_closure(*Args, **Kargs) -> Tuple[int, float]:
+    
+    def calcular_posibilidades_closure(*Args) -> Tuple[int, float]:
+        start = perf_counter()
         resultado = func(*Args)
         tiempo = perf_counter() - start
         return (resultado, tiempo)
+        
     return calcular_posibilidades_closure
 
 
@@ -137,20 +138,23 @@ def memoized(func):
     de ejecución
     """
     pass  # Completar
-    memo = {}
+    memo = dict()
 
-    def helper(*args, **kargs):
-        if (tuple(lista), limite) not in memo:
-            memo[tuple(lista), limite] = func(lista, limite)
-        return memo[tuple(lista), limite]
+    def helper(*args) ->int:
+        if (func) not in memo:
+            temp = func(*args)
+            memo[func] = temp
+            return temp
+        return memo[func]
+
     return helper
 
 
 @medir_tiempo
 @memoized
-def calcular_posibilidades(lista: Sequence[int], limite: int) -> int:
+def calcular_posibilidades(lista: Sequence[int], lim: int) -> int:
     count = 0
-    for i in range(limite):
+    for i in range(lim):
         for _ in permutations(lista, i):
             count += 1
     return count
@@ -186,10 +190,20 @@ sucesivas.
 
 @medir_tiempo
 @memoized
-def calcular_posibilidades_recursiva(lista: Sequence[int], limite: int) -> int:
-    """Re-Escribir de manera recursiva"""
-    pass # Completar
-
+def calcular_posibilidades_recursiva(lista: Sequence[int], lim: int) -> int:
+    lim -= 1
+    print (lim)
+    if (lim == 0):
+        return 1
+    perm = 0
+    for _ in permutations(lista, lim):
+        perm += 1
+    recursion, _= (calcular_posibilidades_recursiva(lista, lim))
+    perm += recursion
+    print (perm)
+    return perm
+         
+    
 
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":
