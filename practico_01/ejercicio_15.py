@@ -137,15 +137,15 @@ def memoized(func):
     tiempo para la función calcular posibilidades. Prestar atención a los tiempo
     de ejecución
     """
-    pass  # Completar
     memo = dict()
 
     def helper(*args) ->int:
-        if (func) not in memo:
+        _, cota= args
+        if cota not in memo:
             temp = func(*args)
-            memo[func] = temp
+            memo[cota] = temp
             return temp
-        return memo[func]
+        return memo[cota]
 
     return helper
 
@@ -158,7 +158,6 @@ def calcular_posibilidades(lista: Sequence[int], lim: int) -> int:
         for _ in permutations(lista, i):
             count += 1
     return count
-
 
 # NO MODIFICAR - INICIO
 print()
@@ -192,7 +191,6 @@ sucesivas.
 @memoized
 def calcular_posibilidades_recursiva(lista: Sequence[int], lim: int) -> int:
     lim -= 1
-    print (lim)
     if (lim == 0):
         return 1
     perm = 0
@@ -200,10 +198,8 @@ def calcular_posibilidades_recursiva(lista: Sequence[int], lim: int) -> int:
         perm += 1
     recursion, _= (calcular_posibilidades_recursiva(lista, lim))
     perm += recursion
-    print (perm)
     return perm
          
-    
 
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":
