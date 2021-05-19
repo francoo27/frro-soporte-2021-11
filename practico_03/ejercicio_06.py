@@ -1,7 +1,7 @@
 """Magic Methods"""
 
 from __future__ import annotations
-from typing import List
+from typing import ByteString, List
 
 
 # NO MODIFICAR - INICIO
@@ -17,6 +17,8 @@ class Article:
     # NO MODIFICAR - FIN
 
     # Completar
+    def __str__(self) -> str:
+        return f"'{self.name}'"
 
 
 # NO MODIFICAR - INICIO
@@ -50,7 +52,10 @@ class ShoppingCart:
     # NO MODIFICAR - FIN
 
     # Completar
-
+    def __str__(self) -> str:
+        s= " , ".join([ str(element) for element in self.articles ])
+        print (s)
+        return s
 
 # NO MODIFICAR - INICIO
 
