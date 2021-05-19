@@ -82,7 +82,7 @@ def medir_tiempo(func: Callable[[Sequence[int], int], int]) -> Callable[[Sequenc
         resultado = func(*Args)
         tiempo = perf_counter() - start
         return (resultado, tiempo)
-   
+
     return calcular_posibilidades_closure
 
 
