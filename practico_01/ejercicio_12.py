@@ -48,7 +48,7 @@ def combinar_enumerate(nombres: List[str], precios: List[float], ids: List[int])
     """
     union = []
     for count, values in enumerate(nombres):
-        union.append((nombres[count], precios[count], ids[count]))  
+        union.append((nombres[count], precios[count], ids[count]))
     return tuple(union)
 
 

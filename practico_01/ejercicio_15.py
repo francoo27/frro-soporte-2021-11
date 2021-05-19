@@ -76,13 +76,13 @@ def medir_tiempo(func: Callable[[Sequence[int], int], int]) -> Callable[[Sequenc
     partial. En este caso se debe devolver una función que devuelva la tupla y
     tome una cantidad arbitraria de parámetros.
     """
-    
+
     def calcular_posibilidades_closure(*Args) -> Tuple[int, float]:
         start = perf_counter()
         resultado = func(*Args)
         tiempo = perf_counter() - start
         return (resultado, tiempo)
-        
+   
     return calcular_posibilidades_closure
 
 
@@ -139,8 +139,8 @@ def memoized(func):
     """
     memo = dict()
 
-    def helper(*args) ->int:
-        _, cota= args
+    def helper(*args) -> int:
+        _, cota = args
         if cota not in memo:
             temp = func(*args)
             memo[cota] = temp
@@ -158,6 +158,7 @@ def calcular_posibilidades(lista: Sequence[int], lim: int) -> int:
         for _ in permutations(lista, i):
             count += 1
     return count
+
 
 # NO MODIFICAR - INICIO
 print()
@@ -196,10 +197,10 @@ def calcular_posibilidades_recursiva(lista: Sequence[int], lim: int) -> int:
     perm = 0
     for _ in permutations(lista, lim):
         perm += 1
-    recursion, _= (calcular_posibilidades_recursiva(lista, lim))
+    recursion, _ = (calcular_posibilidades_recursiva(lista, lim))
     perm += recursion
     return perm
-         
+
 
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":
