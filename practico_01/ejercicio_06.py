@@ -46,7 +46,7 @@ def numeros_al_final_sorted(lista: List[Union[float, str]]) -> List[Union[float,
     """Re-escribir utilizando la función sorted con una custom key.
     Referencia: https://docs.python.org/3/library/functions.html#sorted
     """
-    return sorted(lista, key=lambda v: (not isinstance(v, str)))
+    return sorted(lista, key=lambda v: not isinstance(v, str))
 
 
 # NO MODIFICAR - INICIO

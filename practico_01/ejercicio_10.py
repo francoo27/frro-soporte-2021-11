@@ -26,11 +26,12 @@ def tiene_pares_for_else(numeros: Iterable[int]) -> bool:
     """Re-Escribir utilizando for-else con dos return y un break.
     Referencia: https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops
     """
-    for n in numeros:
-        if n % 2 == 0:
-            return True
-    else:
+    for numero in numeros:
+        if numero % 2 == 0:
+            break
+    else: 
         return False
+    return True
 
 
 # NO MODIFICAR - INICIO

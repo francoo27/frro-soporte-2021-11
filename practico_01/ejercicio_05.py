@@ -11,8 +11,7 @@ def multiplicar_basico(numeros: Iterable[float]) -> float:
     """
     lv = 0 if len(numeros) == 0 else 1
     for n in numeros:
-        n = n * lv
-        lv = n
+        lv *= n
     return lv
 
 
